@@ -1060,13 +1060,6 @@ namespace Dapper
             {
                 if (reader != null)
                 {
-                    if (!reader.IsClosed)
-                    {
-                        try { cmd.Cancel(); }
-                        catch
-                        { /* don't spoil the existing exception */
-                        }
-                    }
                     reader.Dispose();
                 }
                 cmd?.Dispose();
